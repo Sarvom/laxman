@@ -1,6 +1,7 @@
 -- import: sarvom.github.io/laxman/assets
 
--- component page:
+-- component page: 
+caption title: **The Terminal**
 string cta-text-1: About
 string cta-text-2: Showcase
 string cta-text-3: Showmore
@@ -10,7 +11,7 @@ children c:
 width: fill-container
 background.solid: $inherited.colors.background.base
 
--- navbar: 
+-- navbar: $page.title
 cta-text-1: $page.cta-text-1
 cta-text-2: $page.cta-text-2
 cta-text-3: $page.cta-text-3
@@ -35,6 +36,7 @@ children: $page.c
 
 
 -- component navbar:
+caption title:
 string cta-text-1:
 string cta-text-2:
 string cta-text-3:
@@ -46,6 +48,13 @@ padding-horizontal.px: 200
 margin-vertical.px: 20
 
 -- ftd.row:
+
+-- ftd.text: $navbar.title
+role: $inherited.types.heading-small
+text-align: center
+margin-vertical.px: 12
+margin-horizontal.px: 32
+color: $inherited.colors.cta-tertiary.base
 
 -- ftd.text: $navbar.cta-text-1
 role: $inherited.types.label-large
@@ -93,17 +102,23 @@ body body:
 
 -- ftd.column:
 width: fill-container
-align-self: start
+align-self: center
 align-content: center
+
+-- ftd.column:
+align-content: left
 
 -- ftd.text: $blog.title
 role: $inherited.types.heading-large
+margin-bottom.px: 20
 
 -- ftd.text: $blog.date
 role: $inherited.types.copy-large
+margin-bottom.px: 20
 
 -- ftd.text: $blog.hashtag
 role: $inherited.types.label-large
+margin-bottom.px: 20
 
 -- ftd.image:
 src: $blog.pic
@@ -111,10 +126,13 @@ max-width.fixed.px: 860
 
 -- ftd.text: $blog.body
 role: $inherited.types.label-large
+margin-top.px: 30
 
 -- ftd.text: $blog.cta-text-1
 role: $inherited.types.label-large
 link: /
+
+-- end: ftd.column
 
 -- end: ftd.column
 
