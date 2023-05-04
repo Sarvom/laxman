@@ -1,0 +1,122 @@
+-- import: sarvom.github.io/laxman/assets
+
+-- component page:
+string cta-text-1: About
+string cta-text-2: Showcase
+string cta-text-3: Showmore
+children c:
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.background.base
+
+-- navbar: 
+cta-text-1: $page.cta-text-1
+cta-text-2: $page.cta-text-2
+cta-text-3: $page.cta-text-3
+
+-- ftd.column:
+width: fill-container
+children: $page.c
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: page
+
+
+
+
+
+
+
+
+
+
+-- component navbar:
+string cta-text-1:
+string cta-text-2:
+string cta-text-3:
+
+-- ftd.row:
+width: fill-container
+height: hug-content
+padding-horizontal.px: 200
+margin-vertical.px: 20
+
+-- ftd.row:
+
+-- ftd.text: $navbar.cta-text-1
+role: $inherited.types.label-large
+text-align: center
+margin-vertical.px: 12
+margin-horizontal.px: 32
+color: $inherited.colors.cta-tertiary.base
+
+-- ftd.text: $navbar.cta-text-2
+role: $inherited.types.label-large
+text-align: center
+margin-vertical.px: 12
+margin-horizontal.px: 32
+color: $inherited.colors.cta-tertiary.base
+
+-- ftd.text: $navbar.cta-text-3
+role: $inherited.types.label-large
+text-align: center
+margin-vertical.px: 12
+margin-horizontal.px: 32
+color: $inherited.colors.cta-tertiary.base
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: navbar
+
+
+
+
+
+
+
+
+
+
+-- component blog:
+caption title:
+ftd.image-src pic:
+string date:
+string hashtag:
+string cta-text-1:
+body body:
+
+-- ftd.column:
+width: fill-container
+align-self: start
+align-content: center
+
+-- ftd.text: $blog.title
+role: $inherited.types.heading-large
+
+-- ftd.text: $blog.date
+role: $inherited.types.copy-large
+
+-- ftd.text: $blog.hashtag
+role: $inherited.types.label-large
+
+-- ftd.image:
+src: $blog.pic
+
+-- ftd.text: $blog.body
+role: $inherited.types.label-large
+
+-- ftd.text: $blog.cta-text-1
+role: $inherited.types.label-large
+link: /
+
+-- end: ftd.column
+
+-- end: blog
+
+
