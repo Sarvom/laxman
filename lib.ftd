@@ -1,7 +1,6 @@
 -- import: sarvom.github.io/laxman/assets
 
 -- component page:
-ftd.image-src logo: $assets.files.images.Logo.png
 string cta-text-1: About
 string cta-text-2: Showcase
 string cta-text-3: Showmore
@@ -14,7 +13,6 @@ types: $outfit-typography.types
 background.solid: $inherited.colors.background.base
 
 -- navbar: 
-logo: $page.logo
 cta-text-1: $page.cta-text-1
 cta-text-2: $page.cta-text-2
 cta-text-3: $page.cta-text-3
@@ -40,7 +38,6 @@ children: $page.c
 
 
 -- component navbar:
-ftd.image-src logo:
 string cta-text-1:
 string cta-text-2:
 string cta-text-3:
@@ -51,11 +48,6 @@ width: fill-container
 height: hug-content
 padding-horizontal.px: 200
 margin-vertical.px: 20
-
--- ftd.image:
-src: $navbar.logo
-margin-right.px: 200
-margin-vertical.px: 12
 
 -- ftd.row:
 
