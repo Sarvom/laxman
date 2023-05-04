@@ -11,6 +11,22 @@ cta-text-1: Read more >
 
 Developing NES emulator in Rust from Scratch.
 
+-- lib.blog: NES Emulator in Rust: CPU
+pic: $assets.files.images.nes1.png
+date: 2023-04-05
+hashtag: #rust  #emulator  #NES  #EmuDev 
+cta-text-1: Read more >
+
+Developing NES emulator in Rust from Scratch.
+
+-- lib.blog: Rise of Horizen
+pic: $assets.files.images.horizon.svg
+date: 2023-04-05
+hashtag: #rust  #emulator  #NES  #EmuDev 
+cta-text-1: Read more >
+
+Developing NES emulator in Rust from Scratch.
+
 
 -- end: lib.page
 

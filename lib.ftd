@@ -14,7 +14,6 @@ background.solid: $inherited.colors.background.base
 cta-text-1: $page.cta-text-1
 cta-text-2: $page.cta-text-2
 cta-text-3: $page.cta-text-3
-cta-button-1: $page.cta-button-1
 
 -- ftd.column:
 width: fill-container
@@ -39,7 +38,6 @@ children: $page.c
 string cta-text-1:
 string cta-text-2:
 string cta-text-3:
-string cta-button-1:
 
 -- ftd.row:
 width: fill-container
@@ -87,7 +85,7 @@ color: $inherited.colors.cta-tertiary.base
 
 -- component blog:
 caption title:
-ftd.img-src pic:
+ftd.image-src pic:
 string date:
 string hashtag:
 string cta-text-1:
@@ -95,8 +93,8 @@ body body:
 
 -- ftd.column:
 width: fill-container
+align-self: start
 align-content: center
-align-self: center
 
 -- ftd.text: $blog.title
 role: $inherited.types.heading-large
