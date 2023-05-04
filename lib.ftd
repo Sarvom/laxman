@@ -107,6 +107,7 @@ role: $inherited.types.label-large
 
 -- ftd.image:
 src: $blog.pic
+max-width.fixed.px: 860
 
 -- ftd.text: $blog.body
 role: $inherited.types.label-large
