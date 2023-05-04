@@ -8,8 +8,6 @@ children c:
 
 -- ftd.column:
 width: fill-container
-colors: $raunak-cs.main
-types: $outfit-typography.types
 background.solid: $inherited.colors.background.base
 
 -- navbar: 
