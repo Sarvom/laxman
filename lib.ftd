@@ -1,7 +1,7 @@
 -- import: sarvom.github.io/laxman/assets
 
 -- component page: 
-caption title: **The Terminal**
+caption title: **> The Terminal**
 string cta-text-1: About
 string cta-text-2: Showcase
 string cta-text-3: Showmore
@@ -43,44 +43,48 @@ string cta-text-2:
 string cta-text-3:
 
 -- ftd.row:
-align-content: center
 width: fill-container
+padding.px: 20
 height: hug-content
-padding-horizontal.px: 200
-margin-vertical.px: 20
 
 -- ftd.row:
+align-content: left
+width: fill-container
+margin-horizontal.px: 360
+spacing.fixed.px: 250
 
 -- ftd.text: $navbar.title
-role: $inherited.types.copy-large
+role: $inherited.types.copy-regular
 text-align: center
-margin-horizontal.px: 32
 color: $inherited.colors.cta-tertiary.base
 link: /
 
+-- ftd.row:
+align-self: start
+spacing.fixed.px: 20
+
 -- ftd.text: $navbar.cta-text-1
-role: $inherited.types.label-large
+role: $inherited.types.button-medium
 text-align: center
-margin-vertical.px: 12
-margin-horizontal.px: 32
+margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
 link: /
 
 -- ftd.text: $navbar.cta-text-2
-role: $inherited.types.label-large
+role: $inherited.types.button-medium
 text-align: center
-margin-vertical.px: 12
-margin-horizontal.px: 32
+margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
 link: /
 
 -- ftd.text: $navbar.cta-text-3
-role: $inherited.types.label-large
+role: $inherited.types.button-medium
 text-align: center
-margin-vertical.px: 12
-margin-horizontal.px: 32
+margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
 link: /
+
+-- end: ftd.row
 
 -- end: ftd.row
 
@@ -114,6 +118,8 @@ align-content: center
 padding.px: 20
 margin-vertical.px: 20
 align-content: left
+border-bottom-width.px: 1
+border-color: $inherited.colors.cta-primary.base
 
 -- ftd.text: $blog.title
 role: $inherited.types.heading-large
@@ -191,5 +197,78 @@ margin-vertical.px: 16
 -- end: ftd.column
 
 -- end: hero
+
+
+
+
+
+
+
+
+
+
+-- component footer:
+
+-- ftd.column:
+width: fill-container
+padding-vertical.px: 40
+padding-horizontal.px: 20
+
+-- ftd.row:
+width: fill-container
+align-content: center
+spacing.fixed.px: 25
+
+-- ftd.image:
+src: $assets.files.images.home.png
+height.fixed.px: 32
+color: $inherited.colors.text
+
+-- ftd.image:
+src: $assets.files.images.twitter2.png
+height.fixed.px: 32
+color: $inherited.colors.text
+
+-- ftd.image:
+src: $assets.files.images.github.png
+height.fixed.px: 32
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+width: fill-container
+height: hug-content
+padding-horizontal.px: 200
+spacing.fixed.px: 615
+
+-- ftd.text: > The Terminal
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- ftd.row:
+spacing.fixed.px: 24
+
+-- ftd.text: © 2023 The Terminal
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+link: \
+
+-- ftd.text: | by Lax
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+link: \
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: footer
+
+
+
+
 
 
