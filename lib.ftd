@@ -91,7 +91,8 @@ src: $assets.files.images.toggle.png
 margin-vertical.px: 5
 height.fixed.px: 24
 width.fixed.px: 24
-$on-click$: $ftd.enable-dark-mode($a = $navbar.mode, v = true)
+$on-click$: $ftd.set-bool($a = $navbar.mode, v = true)
+$on-click$: $ftd.enable-dark-mode()
 
 -- ftd.image:
 if: { navbar.mode }
@@ -99,7 +100,8 @@ src: $assets.files.images.toggle.png
 margin-vertical.px: 5
 height.fixed.px: 24
 width.fixed.px: 24
-$on-click$: $ftd.enable-light-mode($a = $navbar.mode, v = false)
+$on-click$: $ftd.set-bool($a = $navbar.mode, v = false)
+$on-click$: $ftd.enable-light-mode()
 
 -- end: ftd.row
 
