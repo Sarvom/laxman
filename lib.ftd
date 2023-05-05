@@ -1,4 +1,5 @@
 -- import: sarvom.github.io/laxman/assets
+-- import: fastn-community.github.io/inter-typography
 
 -- component page: 
 caption title: **> The Terminal**
@@ -9,6 +10,7 @@ children c:
 
 -- ftd.column:
 width: fill-container
+types: $inter-typography.types
 background.solid: $inherited.colors.background.base
 
 -- navbar: $page.title
@@ -22,6 +24,17 @@ margin-vertical.px: 50
 children: $page.c
 
 -- end: ftd.column
+
+-- footer: 
+icon-1: $assets.files.images.home.png
+icon-2: $assets.files.images.twitter2.png
+icon-3: $assets.files.images.github.png
+cta-text-1: **> The Terminal**
+cta-text-2: © 2023 The Terminal
+cta-text-3: | by Lax
+url-1: https://laxman.tech/
+url-2: https://twitter.com/0xlax
+url-3: https://github.com/0xlax
 
 -- end: ftd.column
 
@@ -41,6 +54,138 @@ caption title:
 string cta-text-1:
 string cta-text-2:
 string cta-text-3:
+
+-- ftd.column:
+width: fill-container
+
+-- navbar-mobile:
+if: { ftd.device == "mobile" }
+title: $navbar.title
+cta-text-1: $navbar.cta-text-1
+cta-text-2: $navbar.cta-text-2
+cta-text-3: $navbar.cta-text-3
+
+-- navbar-desktop:
+if: { ftd.device == "desktop" }
+title: $navbar.title
+cta-text-1: $navbar.cta-text-1
+cta-text-2: $navbar.cta-text-2
+cta-text-3: $navbar.cta-text-3
+
+-- end: ftd.column
+
+-- end: navbar
+
+
+
+
+
+
+
+
+
+
+-- component navbar-mobile:
+caption title:
+string cta-text-1:
+string cta-text-2:
+string cta-text-3:
+ftd.image-src menu: $assets.files.images.menu.png
+boolean $mode: false
+boolean $open: false
+
+-- ftd.column:
+width: fill-container
+padding.px: 20
+height: hug-content
+
+-- ftd.row:
+align-content: left
+width: fill-container
+
+-- ftd.text: $navbar-mobile.title
+role: $inherited.types.copy-regular
+text-align: center
+color: $inherited.colors.cta-tertiary.base
+margin-right.percent: 50
+link: /
+
+-- ftd.image:
+if: { !navbar-mobile.mode }
+src: $assets.files.images.toggle.png
+margin-vertical.px: 5
+height.fixed.px: 24
+width.fixed.px: 24
+$on-click$: $ftd.set-bool($a = $navbar-mobile.mode, v = true)
+$on-click$: $ftd.enable-dark-mode()
+
+-- ftd.image:
+if: { navbar-mobile.mode }
+src: $assets.files.images.toggle.png
+margin-vertical.px: 5
+height.fixed.px: 24
+width.fixed.px: 24
+$on-click$: $ftd.set-bool($a = $navbar-mobile.mode, v = false)
+$on-click$: $ftd.enable-light-mode()
+
+-- ftd.image:
+if: { !navbar-mobile.open }
+height.fixed.px: 32
+src: $navbar-mobile.menu
+$on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = true)
+
+-- ftd.image:
+if: { navbar-mobile.open }
+height.fixed.px: 32
+src: $navbar-mobile.menu
+$on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { navbar-mobile.open}
+align-self: end
+
+-- ftd.text: $navbar-mobile.cta-text-1
+role: $inherited.types.button-medium
+text-align: center
+margin-vertical.px: 5
+color: $inherited.colors.cta-tertiary.base
+link: /
+
+-- ftd.text: $navbar-mobile.cta-text-2
+role: $inherited.types.button-medium
+text-align: center
+margin-vertical.px: 5
+color: $inherited.colors.cta-tertiary.base
+link: /
+
+-- ftd.text: $navbar-mobile.cta-text-3
+role: $inherited.types.button-medium
+text-align: center
+margin-vertical.px: 5
+color: $inherited.colors.cta-tertiary.base
+link: /
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: navbar-mobile
+
+
+
+
+
+
+
+
+
+-- component navbar-desktop:
+caption title:
+string cta-text-1:
+string cta-text-2:
+string cta-text-3:
 boolean $mode: false
 
 -- ftd.row:
@@ -54,7 +199,7 @@ width: fill-container
 margin-horizontal.px: 360
 spacing.fixed.px: 250
 
--- ftd.text: $navbar.title
+-- ftd.text: $navbar-desktop.title
 role: $inherited.types.copy-regular
 text-align: center
 color: $inherited.colors.cta-tertiary.base
@@ -64,21 +209,21 @@ link: /
 align-self: start
 spacing.fixed.px: 20
 
--- ftd.text: $navbar.cta-text-1
+-- ftd.text: $navbar-desktop.cta-text-1
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
 link: /
 
--- ftd.text: $navbar.cta-text-2
+-- ftd.text: $navbar-desktop.cta-text-2
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
 link: /
 
--- ftd.text: $navbar.cta-text-3
+-- ftd.text: $navbar-desktop.cta-text-3
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
@@ -86,21 +231,21 @@ color: $inherited.colors.cta-tertiary.base
 link: /
 
 -- ftd.image:
-if: { !navbar.mode }
+if: { !navbar-desktop.mode }
 src: $assets.files.images.toggle.png
 margin-vertical.px: 5
 height.fixed.px: 24
 width.fixed.px: 24
-$on-click$: $ftd.set-bool($a = $navbar.mode, v = true)
+$on-click$: $ftd.set-bool($a = $navbar-desktop.mode, v = true)
 $on-click$: $ftd.enable-dark-mode()
 
 -- ftd.image:
-if: { navbar.mode }
+if: { navbar-desktop.mode }
 src: $assets.files.images.toggle.png
 margin-vertical.px: 5
 height.fixed.px: 24
 width.fixed.px: 24
-$on-click$: $ftd.set-bool($a = $navbar.mode, v = false)
+$on-click$: $ftd.set-bool($a = $navbar-desktop.mode, v = false)
 $on-click$: $ftd.enable-light-mode()
 
 -- end: ftd.row
@@ -109,7 +254,7 @@ $on-click$: $ftd.enable-light-mode()
 
 -- end: ftd.row
 
--- end: navbar
+-- end: navbar-desktop
 
 
 
@@ -157,7 +302,8 @@ margin-bottom.px: 20
 
 -- ftd.image:
 src: $blog.pic
-max-width.fixed.px: 860
+max-width.fixed.px if { ftd.device == "desktop" }: 860
+max-width.fixed.px if { ftd.device == "mobile" }: 385
 
 -- ftd.text: $blog.body
 role: $inherited.types.copy-regular
@@ -227,6 +373,66 @@ margin-vertical.px: 16
 
 
 -- component footer:
+ftd.image-src icon-1:
+ftd.image-src icon-2:
+ftd.image-src icon-3:
+string cta-text-1:
+string cta-text-2:
+string cta-text-3:
+string url-1:
+string url-2:
+string url-3:
+
+-- ftd.column:
+width: fill-container
+
+-- footer-mobile:
+if: { ftd.device == "mobile" }
+icon-1: $footer.icon-1
+icon-2: $footer.icon-2
+icon-3: $footer.icon-3
+cta-text-1: $footer.cta-text-1
+cta-text-2: $footer.cta-text-2
+cta-text-3: $footer.cta-text-3
+url-1: $footer.url-1
+url-2: $footer.url-2
+url-3: $footer.url-3
+
+-- footer-desktop:
+if: { ftd.device == "desktop" }
+icon-1: $footer.icon-1
+icon-2: $footer.icon-2
+icon-3: $footer.icon-3
+cta-text-1: $footer.cta-text-1
+cta-text-2: $footer.cta-text-2
+cta-text-3: $footer.cta-text-3
+url-1: $footer.url-1
+url-2: $footer.url-2
+url-3: $footer.url-3
+
+-- end: ftd.column
+
+-- end: footer
+
+
+
+
+
+
+
+
+
+
+-- component footer-mobile:
+ftd.image-src icon-1:
+ftd.image-src icon-2:
+ftd.image-src icon-3:
+string cta-text-1:
+string cta-text-2:
+string cta-text-3:
+string url-1:
+string url-2:
+string url-3:
 
 -- ftd.column:
 width: fill-container
@@ -239,22 +445,102 @@ align-content: center
 spacing.fixed.px: 25
 
 -- ftd.image:
-src: $assets.files.images.home.png
+src: $footer-mobile.icon-1
 height.fixed.px: 32
 color: $inherited.colors.text
-link: https://laxman.tech/
+link: $footer-mobile.url-1
 
 -- ftd.image:
-src: $assets.files.images.twitter2.png
+src: $footer-mobile.icon-2
 height.fixed.px: 32
 color: $inherited.colors.text
-link: https://twitter.com/0xlax
+link: $footer-mobile.url-2
 
 -- ftd.image:
-src: $assets.files.images.github.png
+src: $footer-mobile.icon-3
 height.fixed.px: 32
 color: $inherited.colors.text
-link: https://github.com/0xlax
+link: $footer-mobile.url-3
+
+-- end: ftd.row
+
+-- ftd.column:
+width: fill-container
+align-content: center
+height: hug-content
+margin-top.px: 20
+
+-- ftd.text: $footer-mobile.cta-text-1
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- ftd.column:
+
+-- ftd.text: $footer-mobile.cta-text-2
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+link: \
+
+-- ftd.text: $footer-mobile.cta-text-3
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+link: \
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: footer-mobile
+
+
+
+
+
+
+
+
+
+
+-- component footer-desktop:
+ftd.image-src icon-1:
+ftd.image-src icon-2:
+ftd.image-src icon-3:
+string cta-text-1:
+string cta-text-2:
+string cta-text-3:
+string url-1:
+string url-2:
+string url-3:
+
+-- ftd.column:
+width: fill-container
+padding-vertical.px: 40
+padding-horizontal.px: 20
+
+-- ftd.row:
+width: fill-container
+align-content: center
+spacing.fixed.px: 25
+
+-- ftd.image:
+src: $footer-desktop.icon-1
+height.fixed.px: 32
+color: $inherited.colors.text
+link: $footer-desktop.url-1
+
+-- ftd.image:
+src: $footer-desktop.icon-2
+height.fixed.px: 32
+color: $inherited.colors.text
+link: $footer-desktop.url-2
+
+-- ftd.image:
+src: $footer-desktop.icon-3
+height.fixed.px: 32
+color: $inherited.colors.text
+link: $footer-desktop.url-3
 
 -- end: ftd.row
 
@@ -264,19 +550,19 @@ height: hug-content
 padding-horizontal.px: 200
 spacing.fixed.px: 615
 
--- ftd.text: **> The Terminal**
+-- ftd.text: $footer-desktop.cta-text-1
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 
 -- ftd.row:
 spacing.fixed.px: 24
 
--- ftd.text: © 2023 The Terminal
+-- ftd.text: $footer-desktop.cta-text-2
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 link: \
 
--- ftd.text: | by Lax
+-- ftd.text: $footer-desktop.cta-text-3
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 link: \
@@ -287,7 +573,17 @@ link: \
 
 -- end: ftd.column
 
--- end: footer
+-- end: footer-desktop
+
+
+
+
+
+
+
+
+
+
 
 
 
