@@ -18,6 +18,7 @@ cta-text-3: $page.cta-text-3
 
 -- ftd.column:
 width: fill-container
+margin-vertical.px: 50
 children: $page.c
 
 -- end: ftd.column
@@ -42,6 +43,7 @@ string cta-text-2:
 string cta-text-3:
 
 -- ftd.row:
+align-content: center
 width: fill-container
 height: hug-content
 padding-horizontal.px: 200
@@ -50,11 +52,11 @@ margin-vertical.px: 20
 -- ftd.row:
 
 -- ftd.text: $navbar.title
-role: $inherited.types.heading-small
+role: $inherited.types.copy-large
 text-align: center
-margin-vertical.px: 12
 margin-horizontal.px: 32
 color: $inherited.colors.cta-tertiary.base
+link: /
 
 -- ftd.text: $navbar.cta-text-1
 role: $inherited.types.label-large
@@ -62,6 +64,7 @@ text-align: center
 margin-vertical.px: 12
 margin-horizontal.px: 32
 color: $inherited.colors.cta-tertiary.base
+link: /
 
 -- ftd.text: $navbar.cta-text-2
 role: $inherited.types.label-large
@@ -69,6 +72,7 @@ text-align: center
 margin-vertical.px: 12
 margin-horizontal.px: 32
 color: $inherited.colors.cta-tertiary.base
+link: /
 
 -- ftd.text: $navbar.cta-text-3
 role: $inherited.types.label-large
@@ -76,6 +80,7 @@ text-align: center
 margin-vertical.px: 12
 margin-horizontal.px: 32
 color: $inherited.colors.cta-tertiary.base
+link: /
 
 -- end: ftd.row
 
@@ -106,18 +111,23 @@ align-self: center
 align-content: center
 
 -- ftd.column:
+padding.px: 20
+margin-vertical.px: 20
 align-content: left
 
 -- ftd.text: $blog.title
 role: $inherited.types.heading-large
+color: $inherited.colors.text
 margin-bottom.px: 20
 
 -- ftd.text: $blog.date
-role: $inherited.types.copy-large
-margin-bottom.px: 20
+role: $inherited.types.source-code
+color: $inherited.colors.text
+margin-bottom.px: 10
 
 -- ftd.text: $blog.hashtag
 role: $inherited.types.label-large
+color: $inherited.colors.text
 margin-bottom.px: 20
 
 -- ftd.image:
@@ -125,11 +135,14 @@ src: $blog.pic
 max-width.fixed.px: 860
 
 -- ftd.text: $blog.body
-role: $inherited.types.label-large
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
 margin-top.px: 30
 
 -- ftd.text: $blog.cta-text-1
 role: $inherited.types.label-large
+color: $inherited.colors.text
+margin-vertical.px: 20
 link: /
 
 -- end: ftd.column
@@ -137,5 +150,46 @@ link: /
 -- end: ftd.column
 
 -- end: blog
+
+
+
+
+
+
+
+
+
+
+-- component hero:
+caption title:
+ftd.image-src pic:
+body body:
+
+-- ftd.column:
+padding.px: 20
+align-content: center
+align-self: center
+border-width.px: 1
+border-radius.px: 8
+border-color: $inherited.colors.cta-primary.base
+
+-- ftd.text: $hero.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+margin-vertical.px: 20
+
+-- ftd.image:
+src: $hero.pic
+width.fixed.px: 60 
+margin-horizontal.px: 90
+
+-- ftd.text: $hero.body
+role: $inherited.types.label-large
+color: $inherited.colors.text
+margin-vertical.px: 16
+
+-- end: ftd.column
+
+-- end: hero
 
 
