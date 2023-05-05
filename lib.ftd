@@ -41,6 +41,7 @@ caption title:
 string cta-text-1:
 string cta-text-2:
 string cta-text-3:
+boolean $mode: false
 
 -- ftd.row:
 width: fill-container
@@ -83,6 +84,22 @@ text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
 link: /
+
+-- ftd.image:
+if: { !navbar.mode }
+src: $assets.files.images.toggle.png
+margin-vertical.px: 5
+height.fixed.px: 24
+width.fixed.px: 24
+$on-click$: $ftd.enable-dark-mode($a = $navbar.mode, v = true)
+
+-- ftd.image:
+if: { navbar.mode }
+src: $assets.files.images.toggle.png
+margin-vertical.px: 5
+height.fixed.px: 24
+width.fixed.px: 24
+$on-click$: $ftd.enable-light-mode($a = $navbar.mode, v = false)
 
 -- end: ftd.row
 
@@ -223,16 +240,19 @@ spacing.fixed.px: 25
 src: $assets.files.images.home.png
 height.fixed.px: 32
 color: $inherited.colors.text
+link: https://laxman.tech/
 
 -- ftd.image:
 src: $assets.files.images.twitter2.png
 height.fixed.px: 32
 color: $inherited.colors.text
+link: https://twitter.com/0xlax
 
 -- ftd.image:
 src: $assets.files.images.github.png
 height.fixed.px: 32
 color: $inherited.colors.text
+link: https://github.com/0xlax
 
 -- end: ftd.row
 
@@ -242,7 +262,7 @@ height: hug-content
 padding-horizontal.px: 200
 spacing.fixed.px: 615
 
--- ftd.text: > The Terminal
+-- ftd.text: **> The Terminal**
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 
