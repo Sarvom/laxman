@@ -1,0 +1,40 @@
+-- import: sarvom.github.io/laxman/assets
+-- import: sarvom.github.io/laxman/lib
+
+-- lib.page:
+
+-- lib.blog: Rise of Horizen
+pic: $assets.files.images.horizon.svg
+date: 2022-06-14
+hashtag: #zk-SNARKs  #Blockchain  #Dapps  #Cosmos 
+
+-- lib.blog-post: 
+
+Ever since I watched the Consensus2022 presentation by Rob Viglione about zkSNARKs, 
+made me curious how Horizen plans its scalability. This blog is a short deep dive into 
+Horizen Blockchain and relevent comparisions.
+
+-- lib.blog-post: Horizen ($ZEN)
+
+Horizen is a general-purpose blockchain system with novel Cross-Chain Transfer Protocol
+(CCTP) that enables an unbound and fully decentralized sidechain ecosystem
+
+A peer-to-peer, permissionless and incentivised network that enables you to build a 
+custom blockchain and applicaiton on the layer using Sidechain-SDK, a development kit 
+devised to deploy a blockchain with fully customisable features and Dapps using 
+Horizen’s scalability and extenisbility. Multiple convocations of sidechains 
+(parallel chains) transmit messages to each other and the mainchain via CCTP.
+
+As of writing, Horizen has 45k active nodes running with an stake requirement of 42 $ZEN
+at an average price of $15.08 and estimated earning per node of about $4.17 ($50.75 a 
+year)
+
+Horizen has an intense focus on enabling zero-knowledge protocol to let application 
+verify information without revealing the information itself. This helps companies 
+building supply chains on Horizen share product data with customers without revealing 
+sensitive information, like identities of people involved in supply chain or locations 
+of factories
+
+-- end: lib.blog
+
+-- end: lib.page

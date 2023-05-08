@@ -151,14 +151,14 @@ role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /
+link: /about
 
 -- ftd.text: $navbar-mobile.cta-text-2
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /
+link: /showcase
 
 -- ftd.text: $navbar-mobile.cta-text-3
 role: $inherited.types.button-medium
@@ -214,14 +214,14 @@ role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /
+link: /about
 
 -- ftd.text: $navbar-desktop.cta-text-2
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /
+link: /showcase
 
 -- ftd.text: $navbar-desktop.cta-text-3
 role: $inherited.types.button-medium
@@ -266,12 +266,13 @@ $on-click$: $ftd.enable-light-mode()
 
 
 -- component blog:
-caption title:
-ftd.image-src pic:
-string date:
-string hashtag:
-string cta-text-1:
-body body:
+optional caption title:
+optional ftd.image-src pic:
+optional string date:
+optional string hashtag:
+optional string cta-text-1:
+optional body body:
+children c:
 
 -- ftd.column:
 width: fill-container
@@ -282,39 +283,52 @@ align-content: center
 padding.px: 20
 margin-vertical.px: 20
 align-content: left
+margin-horizontal.px if { ftd.device == "desktop"}: 360
 border-bottom-width.px: 1
 border-color: $inherited.colors.cta-primary.base
 
 -- ftd.text: $blog.title
+if: {blog.title != NULL}
 role: $inherited.types.heading-large
 color: $inherited.colors.text
 margin-bottom.px: 20
 
 -- ftd.text: $blog.date
+if: {blog.date != NULL}
 role: $inherited.types.source-code
 color: $inherited.colors.text
 margin-bottom.px: 10
 
 -- ftd.text: $blog.hashtag
+if: {blog.hashtag != NULL}
 role: $inherited.types.label-large
 color: $inherited.colors.text
 margin-bottom.px: 20
 
 -- ftd.image:
 src: $blog.pic
+if: {blog.pic != NULL}
 max-width.fixed.px if { ftd.device == "desktop" }: 860
 max-width.fixed.px if { ftd.device == "mobile" }: 385
 
 -- ftd.text: $blog.body
+if: {blog.body != NULL}
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
 margin-top.px: 30
 
 -- ftd.text: $blog.cta-text-1
+if: {blog.cta-text-1 != NULL}
 role: $inherited.types.label-large
 color: $inherited.colors.text
 margin-vertical.px: 20
 link: /
+
+-- ftd.column:
+width: fill-container
+children: $blog.c
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -574,6 +588,149 @@ link: \
 -- end: ftd.column
 
 -- end: footer-desktop
+
+
+
+
+
+
+
+
+
+
+-- component about:
+caption title:
+body body:
+string text:
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+
+-- ftd.column:
+margin-horizontal.px if { ftd.device == "desktop"}: 360
+padding.px: 20
+
+-- ftd.text: $about.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+margin-bottom.px: 20
+
+-- ftd.text: $about.body
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+margin-bottom.px: 20
+
+-- ftd.text: $about.text
+role: $inherited.types.label-large
+color: $inherited.colors.text
+margin-bottom.px: 20
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: about
+
+
+
+
+
+
+
+
+
+
+-- component group-with-title:
+caption title:
+children c:
+
+-- ftd.column:
+padding.px: 20
+margin-horizontal.px if { ftd.device == "desktop" }: 360 
+
+-- ftd.text: $group-with-title.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text
+
+-- ftd.column:
+width: fill-container
+margin-vertical.px: 50
+children: $group-with-title.c
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: group-with-title
+
+
+
+
+
+
+
+
+
+
+-- component image-with-content:
+ftd.image-src pic:
+body description:
+
+-- ftd.column:
+width: fill-container
+align-content: left
+
+-- ftd.image:
+src: $image-with-content.pic
+height.fixed.px: 128
+width.fixed.px: 128
+
+-- ftd.text: $image-with-content.description
+role: $inherited.types.heading-tiny
+color: $inherited.colors.text
+margin-vertical.px: 22
+
+-- end: ftd.column
+
+-- end: image-with-content
+
+
+
+
+
+
+
+
+
+
+-- component blog-post:
+optional caption heading:
+optional ftd.image-src pic:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: $blog-post.heading
+if: {blog-post.heading != NULL}
+role: $inherited.types.heading-small
+color: $inherited.colors.text
+margin-vertical.px: 22
+
+-- ftd.image: $blog-post.pic
+if: {blog-post.pic != NULL}
+
+-- ftd.text: $blog-post.body
+if: {blog-post.body != NULL}
+role: $inherited.types.blockquote
+color: $inherited.colors.text
+margin-vertical.px: 16
+
+-- end: ftd.column 
+
+-- end: blog-post
+
 
 
 
