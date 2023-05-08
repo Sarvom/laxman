@@ -310,6 +310,7 @@ src: $blog.pic
 if: {blog.pic != NULL}
 max-width.fixed.px if { ftd.device == "desktop" }: 860
 max-width.fixed.px if { ftd.device == "mobile" }: 385
+align-self: center
 
 -- ftd.text: $blog.body
 if: {blog.body != NULL}
@@ -487,18 +488,19 @@ margin-top.px: 20
 -- ftd.text: $footer-mobile.cta-text-1
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
+link: /
 
 -- ftd.column:
 
 -- ftd.text: $footer-mobile.cta-text-2
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
-link: \
+link: /
 
 -- ftd.text: $footer-mobile.cta-text-3
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
-link: \
+link: /
 
 -- end: ftd.column
 
@@ -567,6 +569,7 @@ spacing.fixed.px: 615
 -- ftd.text: $footer-desktop.cta-text-1
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
+link: /
 
 -- ftd.row:
 spacing.fixed.px: 24
@@ -574,12 +577,12 @@ spacing.fixed.px: 24
 -- ftd.text: $footer-desktop.cta-text-2
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
-link: \
+link: /
 
 -- ftd.text: $footer-desktop.cta-text-3
 role: $inherited.types.copy-regular
 color: $inherited.colors.text
-link: \
+link: /
 
 -- end: ftd.row
 
@@ -685,6 +688,7 @@ align-content: left
 src: $image-with-content.pic
 height.fixed.px: 128
 width.fixed.px: 128
+align-self: center
 
 -- ftd.text: $image-with-content.description
 role: $inherited.types.heading-tiny
@@ -720,6 +724,7 @@ margin-vertical.px: 22
 
 -- ftd.image: $blog-post.pic
 if: {blog-post.pic != NULL}
+align-self: center
 
 -- ftd.text: $blog-post.body
 if: {blog-post.body != NULL}
@@ -730,6 +735,49 @@ margin-vertical.px: 16
 -- end: ftd.column 
 
 -- end: blog-post
+
+
+
+
+
+
+
+
+
+-- component blog-quote:
+body body:
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.text: $blog-quote.body
+role: $inherited.types.blockquote
+color: $inherited.colors.text
+padding-horizontal.px: 20
+padding-vertical.px: 10
+border-left-width.px: 1
+margin-horizontal.px: 40
+
+-- end: ftd.column
+
+-- end: blog-quote
+
+
+
+
+
+
+
+
+
+
+-- component blog-table:
+
+-- ftd.column:
+
+-- end: blog-table
+
+
 
 
 
