@@ -113,6 +113,28 @@ Latus Sidechain is one among the many sidechains in existance that uses
 
 -- lib.blog-post: IBC vs CCTP 
 
+-- lib.blog-table: 
+content-left: **Inter-BLockchain Communication (IBC)**
+content-right: **Cross-Chain Transfer Protocol (CCTP)**
+
+-- lib.blog-table: 
+content-left: Communication between Zones as well as with Hub
+content-right: Modified version of CCTP called Zendoo for communication between mainchain and sidechains
+
+-- lib.blog-table: 
+content-left: IBC supports transport, authentication and ordering of layers
+content-right: CCTPs responsible for only forward and backward transfers
+
+-- lib.blog-table: 
+content-left: IBCBlockCommitTx and IBCPacketTx transactions are used to defined and verify sender and reciever
+content-right: CCTP leverages zkSnark techniques to esstablish decentralised and verifiable cros-chain transfers. Also, enables communication(burning and creation) with different sidechain without knowing their internal structure
+
+-- lib.blog-post: References
+
+[cryptobook](https://cryptobook.nakov.com/cryptographic-hash-functions/proof-of-work-hash-functions) [Horizon Whitepaper](https://www.horizen.io/assets/files/Horizen-White-Paper.pdf) [IBC](https://ibcprotocol.org/implementations/)
+
+A submission to [Syndica.io](https://syndica.io/) 
+
 -- end: lib.blog
 
 -- end: lib.page
