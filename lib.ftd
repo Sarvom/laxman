@@ -772,26 +772,42 @@ margin-horizontal.px: 40
 
 
 -- component blog-table:
+string content-left:
+string content-right:
 
 -- ftd.column:
+width: fill-container
+
+-- ftd.row:
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+
+-- ftd.row:
+width.fixed.percent: 50
+padding.px: 10
+
+-- ftd.text: $blog-table.content-left
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+align-content: center
+width.fixed.percent: 50
+border-left-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 10
+
+-- ftd.text: $blog-table.content-right
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
 
 -- end: blog-table
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
