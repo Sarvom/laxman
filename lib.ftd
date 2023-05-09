@@ -755,6 +755,7 @@ margin-vertical.px: 22
 -- ftd.image: $blog-post.pic
 if: {blog-post.pic != NULL}
 align-self: center
+max-width.fixed.px if { ftd.device == "mobile" }: 385
 
 -- ftd.text: $blog-post.body
 if: {blog-post.body != NULL}
