@@ -7,9 +7,9 @@ string title-url: /
 string cta-text-1: About
 string cta-text-2: Showcase
 string cta-text-3: Showmore
-string cta-url-1: about/
-string cta-url-2: showcase/
-string cta-url-3: trees/
+string cta-url-1: /about/
+string cta-url-2: /showcase/
+string cta-url-3: /trees/
 children c:
 
 -- ftd.column:
