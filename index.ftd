@@ -3,8 +3,6 @@
 
 -- lib.page:
 
-
-
 -- lib.hero: **The Terminal**
 pic: $assets.files.images.game.gif
 

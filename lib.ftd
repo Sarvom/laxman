@@ -299,7 +299,7 @@ optional ftd.image-src pic:
 optional string date:
 optional string hashtag:
 optional string cta-text-1:
-string cta-url-1:
+optional string cta-url-1:
 optional body body:
 children c:
 
@@ -353,6 +353,7 @@ role: $inherited.types.label-large
 color: $inherited.colors.text
 margin-vertical.px: 20
 link: $blog.cta-url-1
+if: {blog.cta-url-1 != NULL}
 
 
 -- ftd.column:
