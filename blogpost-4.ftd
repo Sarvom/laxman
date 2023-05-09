@@ -114,7 +114,7 @@ understanding ECDH key exchange better is to watch this detailed explanation by
 Computerphile
 
 -- ftd.iframe:
-src: https://www.youtube.com/watch?v=NmM9HA2MQGI
+youtube: https://www.youtube.com/watch?v=NmM9HA2MQGI
 width: fill-container
 
 -- lib.blog-post:

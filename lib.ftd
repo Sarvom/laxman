@@ -165,7 +165,7 @@ role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /
+link: /trees
 
 -- end: ftd.column
 
@@ -228,7 +228,7 @@ role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /
+link: /trees
 
 -- ftd.image:
 if: { !navbar-desktop.mode }
@@ -757,6 +757,7 @@ padding-horizontal.px: 20
 padding-vertical.px: 10
 border-left-width.px: 1
 margin-horizontal.px: 40
+margin-vertical.px: 10
 
 -- end: ftd.column
 
@@ -771,7 +772,7 @@ margin-horizontal.px: 40
 
 
 
--- component blog-table:
+-- component blog-table-1:
 string content-left:
 string content-right:
 
@@ -787,7 +788,7 @@ border-color: $inherited.colors.border
 width.fixed.percent: 50
 padding.px: 10
 
--- ftd.text: $blog-table.content-left
+-- ftd.text: $blog-table-1.content-left
 role: $inherited.types.copy-small
 color: $inherited.colors.text
 
@@ -800,7 +801,7 @@ border-left-width.px: 1
 border-color: $inherited.colors.border
 padding.px: 10
 
--- ftd.text: $blog-table.content-right
+-- ftd.text: $blog-table-1.content-right
 role: $inherited.types.copy-small
 color: $inherited.colors.text
 
@@ -810,4 +811,109 @@ color: $inherited.colors.text
 
 -- end: ftd.column
 
--- end: blog-table
+-- end: blog-table-1
+
+
+
+
+
+
+
+
+
+-- component blog-table-2:
+string content-1:
+string content-2:
+string content-3:
+string content-4:
+string content-5:
+string content-6:
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.row:
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+
+-- ftd.row:
+width.fixed.percent: 16.66
+padding.px: 10
+
+-- ftd.text: $blog-table-2.content-1
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+height: fill-container
+width.fixed.percent: 16.66
+border-left-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 10
+
+-- ftd.text: $blog-table-2.content-2
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+height: fill-container
+border-left-width.px: 1
+border-color: $inherited.colors.border
+width.fixed.percent: 16.66
+padding.px: 10
+
+-- ftd.text: $blog-table-2.content-3
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+height: fill-container
+width.fixed.percent: 16.66
+border-left-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 10
+
+-- ftd.text: $blog-table-2.content-4
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+height: fill-container
+width.fixed.percent: 16.66
+border-left-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 10
+
+-- ftd.text: $blog-table-2.content-5
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+height: fill-container
+width.fixed.percent: 16.66
+border-left-width.px: 1
+border-color: $inherited.colors.border
+padding.px: 10
+
+-- ftd.text: $blog-table-2.content-6
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: blog-table-2
