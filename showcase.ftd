@@ -39,7 +39,7 @@ cvv : Cosmos Cross-Chain Validator utitlities #
 pic: $assets.files.images.switchboard2.png
 
 Switchboardv2-go Library [WIP] : Go library to interact with switchboardv2’s hosted 
-data feeds #
+data feeds 
 
 -- end: lib.group-with-title
 
