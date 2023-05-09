@@ -3,9 +3,13 @@
 
 -- component page: 
 caption title: **> The Terminal**
+string title-url: /
 string cta-text-1: About
 string cta-text-2: Showcase
 string cta-text-3: Showmore
+string cta-url-1: about/
+string cta-url-2: showcase/
+string cta-url-3: trees/
 children c:
 
 -- ftd.column:
@@ -14,9 +18,13 @@ types: $inter-typography.types
 background.solid: $inherited.colors.background.base
 
 -- navbar: $page.title
+title-url: $page.title-url
 cta-text-1: $page.cta-text-1
 cta-text-2: $page.cta-text-2
 cta-text-3: $page.cta-text-3
+cta-url-1: $page.cta-url-1
+cta-url-2: $page.cta-url-2
+cta-url-3: $page.cta-url-3
 
 -- ftd.column:
 width: fill-container
@@ -51,9 +59,13 @@ url-3: https://github.com/0xlax
 
 -- component navbar:
 caption title:
+string title-url:
 string cta-text-1:
 string cta-text-2:
 string cta-text-3:
+string cta-url-1:
+string cta-url-2:
+string cta-url-3:
 
 -- ftd.column:
 width: fill-container
@@ -61,16 +73,24 @@ width: fill-container
 -- navbar-mobile:
 if: { ftd.device == "mobile" }
 title: $navbar.title
+title-url: $navbar.title-url
 cta-text-1: $navbar.cta-text-1
 cta-text-2: $navbar.cta-text-2
 cta-text-3: $navbar.cta-text-3
+cta-url-1: $navbar.cta-url-1
+cta-url-2: $navbar.cta-url-2
+cta-url-3: $navbar.cta-url-3
 
 -- navbar-desktop:
 if: { ftd.device == "desktop" }
 title: $navbar.title
+title-url: $navbar.title-url
 cta-text-1: $navbar.cta-text-1
 cta-text-2: $navbar.cta-text-2
 cta-text-3: $navbar.cta-text-3
+cta-url-1: $navbar.cta-url-1
+cta-url-2: $navbar.cta-url-2
+cta-url-3: $navbar.cta-url-3
 
 -- end: ftd.column
 
@@ -87,9 +107,13 @@ cta-text-3: $navbar.cta-text-3
 
 -- component navbar-mobile:
 caption title:
+string title-url:
 string cta-text-1:
 string cta-text-2:
 string cta-text-3:
+string cta-url-1:
+string cta-url-2:
+string cta-url-3:
 ftd.image-src menu: $assets.files.images.menu.png
 boolean $mode: false
 boolean $open: false
@@ -108,7 +132,7 @@ role: $inherited.types.copy-regular
 text-align: center
 color: $inherited.colors.cta-tertiary.base
 margin-right.percent: 50
-link: /
+link: $navbar-mobile.title-url
 
 -- ftd.image:
 if: { !navbar-mobile.mode }
@@ -151,21 +175,21 @@ role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /about
+link: $navbar-mobile.cta-url-1
 
 -- ftd.text: $navbar-mobile.cta-text-2
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /showcase
+link: $navbar-mobile.cta-url-2
 
 -- ftd.text: $navbar-mobile.cta-text-3
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /trees
+link: $navbar-mobile.cta-url-3
 
 -- end: ftd.column
 
@@ -183,9 +207,13 @@ link: /trees
 
 -- component navbar-desktop:
 caption title:
+string title-url:
 string cta-text-1:
 string cta-text-2:
 string cta-text-3:
+string cta-url-1:
+string cta-url-2:
+string cta-url-3:
 boolean $mode: false
 
 -- ftd.row:
@@ -203,7 +231,7 @@ spacing.fixed.px: 250
 role: $inherited.types.copy-regular
 text-align: center
 color: $inherited.colors.cta-tertiary.base
-link: /
+link: $navbar-desktop.title-url
 
 -- ftd.row:
 align-self: start
@@ -214,21 +242,21 @@ role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /about
+link: $navbar-desktop.cta-url-1
 
 -- ftd.text: $navbar-desktop.cta-text-2
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /showcase
+link: $navbar-desktop.cta-url-2
 
 -- ftd.text: $navbar-desktop.cta-text-3
 role: $inherited.types.button-medium
 text-align: center
 margin-vertical.px: 5
 color: $inherited.colors.cta-tertiary.base
-link: /trees
+link: $navbar-desktop.cta-url-3
 
 -- ftd.image:
 if: { !navbar-desktop.mode }
@@ -271,6 +299,7 @@ optional ftd.image-src pic:
 optional string date:
 optional string hashtag:
 optional string cta-text-1:
+optional string cta-url-1:
 optional body body:
 children c:
 
@@ -323,7 +352,9 @@ if: {blog.cta-text-1 != NULL}
 role: $inherited.types.label-large
 color: $inherited.colors.text
 margin-vertical.px: 20
-link: /
+link: $blog.cta-url-1
+if: {blog.cta-url-1 != NULL}
+
 
 -- ftd.column:
 width: fill-container
@@ -725,6 +756,7 @@ margin-vertical.px: 22
 -- ftd.image: $blog-post.pic
 if: {blog-post.pic != NULL}
 align-self: center
+max-width.fixed.px if { ftd.device == "mobile" }: 385
 
 -- ftd.text: $blog-post.body
 if: {blog-post.body != NULL}
